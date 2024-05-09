@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-family: system-ui, Arial, Helvetica, sans-serif;
+    background-color: rgb(238, 240, 242);
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+ul,ol {
+    padding-left: 2rem;
+    margin-bottom: 0.5rem
+}
+
+h1,h2 {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+a:hover {
+    text-decoration: underline;
+}

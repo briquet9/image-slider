@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1. Basic slide toggler using radio buttons and labels</title>
+    <link rel="stylesheet" href="../common/style-default.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="slider.js"></script>
+</head>
+<body>
+    <main>
+        <h2>1. Basic slide toggler using radio buttons and labels</h2>
+        <div class="slider" id="slider1">
+            <div class="slides">
+                <div class="slide">
+                    <input type="radio" id="radio_slider1_slide1" name="slider1" checked="checked">
+                    <div class="content">
+                        <img src="../common/werner-sevenster-JuP0ZG0UNi0-unsplash.jpg">
+                    </div>
+                    <div class="slider-button next">
+                        <label for="radio_slider1_slide2">
+                            <img src="../common/arrow-sm-right.svg" />
+                        </label>
+                    </div>
+                </div>
+                <div class="slide">
+                    <input type="radio" id="radio_slider1_slide2" name="slider1">
+                    <div class="slider-button previous">
+                        <label for="radio_slider1_slide1">
+                            <img src="../common/arrow-sm-right.svg" />
+                        </label>
+                    </div>
+                    <div class="content">
+                        <img src="../common/casey-horner-8ftuBebG3_M-unsplash.jpg" loading="lazy">
+                    </div>
+                    <div class="slider-button next">
+                        <label for="radio_slider1_slide3">
+                            <img src="../common/arrow-sm-right.svg" />
+                        </label>
+                    </div>
+                </div>
+                <div class="slide">
+                    <input type="radio" id="radio_slider1_slide3" name="slider1">
+                    <div class="slider-button previous">
+                        <label for="radio_slider1_slide2">
+                            <img src="../common/arrow-sm-right.svg" />
+                        </label>
+                    </div>
+                    <div class="content">
+                        <img src="../common/laura-smetsers-H-TW2CoNtTk-unsplash.jpg" loading="lazy">
+                    </div>
+                    <div class="slider-button next">
+                        <label for="radio_slider1_slide4">
+                            <img src="../common/arrow-sm-right.svg" />
+                        </label>
+                    </div>
+                </div>
+                <div class="slide">
+                    <input type="radio" id="radio_slider1_slide4" name="slider1">
+                    <div class="slider-button previous">
+                        <label for="radio_slider1_slide3">
+                            <img src="../common/arrow-sm-right.svg" />
+                        </label>
+                    </div>
+                    <div class="content">
+                        <img src="../common/mathew-waters-3ux6TnSApDs-unsplash.jpg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <label for="radio_slider1_slide1"><img src="../common/dot.svg" /></label>
+                <label for="radio_slider1_slide2"><img src="../common/dot.svg" /></label>
+                <label for="radio_slider1_slide3"><img src="../common/dot.svg" /></label>
+                <label for="radio_slider1_slide4"><img src="../common/dot.svg" /></label>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

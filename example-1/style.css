@@ -1,0 +1,84 @@
+.slider {
+    position: relative;
+}
+
+.slider .slides {
+    margin-bottom: 10px;
+}
+
+.slider .slides .slide {
+    display: flex;
+    align-items: center;
+}
+
+.slider .slides .slide input[type=radio],
+.slider .slides .slide .slider-button,
+.slider .slides .slide .content {
+    display: none;
+}
+
+.slider .slides .slide .slider-button {
+    width: 34px;
+    height: 34px;
+    padding: 7px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    position: absolute;
+}
+
+.slider .slides .slide input[type=radio]:checked~.slider-button {
+    display: flex;
+}
+
+.slider .slides .slide .slider-button.previous {
+    transform: rotate(180deg);
+    left: 4px;
+}
+
+.slider .slides .slide .slider-button.next {
+    right: 4px;
+}
+
+.slider .slides .slide .slider-button img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.2;
+}
+
+.slider .slides .slide .slider-button img:hover {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.slider .slides .slide .content {
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 100%;
+}
+
+.slider .slides .slide input[type=radio]:checked~.content {
+    display: flex;
+}
+
+.slider .slides .slide .content img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.slider .slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.slider .slider-nav label {
+    opacity: 0.2;
+}
+
+.slider .slider-nav label:hover {
+    opacity: 0.4;
+    cursor: pointer;
+}

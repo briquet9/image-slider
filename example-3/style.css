@@ -1,0 +1,93 @@
+.slider {
+    position: relative;
+}
+
+.slider .slides {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    gap: 0px 10px;
+    scrollbar-width: none;
+    margin-bottom: 10px;
+}
+
+.slider .slide {
+    min-width: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.slider .slides .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 100%;
+}
+
+.slider .slides .content img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.slider .slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.slider .slider-nav .slider-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slider .slider-nav .slider-button img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+}
+
+.slider .slider-nav .slider-button.previous img {
+    transform: rotate(180deg);
+}
+
+.slider .slider-nav .slider-button img:hover {
+    cursor: pointer;
+    color: black;
+    opacity: 0.4;
+}
+
+.slider .slider-nav .radios {
+    bottom: 7px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.slider .slider-nav .radios input {
+    appearance: none;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: solid 1px transparent;
+}
+
+.slider .slider-nav .radios input:checked {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.slider .slider-nav .radios input:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}

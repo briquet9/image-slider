@@ -1,0 +1,45 @@
+.slider .slides {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    margin-bottom: 10px;
+}
+
+.slider .slides .slide {
+    min-width: 100%;
+    scroll-snap-align: center;
+    display: flex;
+}
+
+.slider .slides .slide .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.slider .slides .slide .content img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.slider .slider-nav {
+    width: min-content;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.slider .slider-nav a {
+    opacity: 0.2;
+}
+
+.slider .slider-nav a:hover {
+    opacity: 0.4;
+}
