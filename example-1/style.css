@@ -12,12 +12,12 @@
 }
 
 .slider .slides .slide input[type=radio],
-.slider .slides .slide .slider-button,
+.slider .slides .slide .slider-arrow,
 .slider .slides .slide .content {
     display: none;
 }
 
-.slider .slides .slide .slider-button {
+.slider .slides .slide .slider-arrow {
     width: 34px;
     height: 34px;
     padding: 7px;
@@ -26,26 +26,26 @@
     position: absolute;
 }
 
-.slider .slides .slide input[type=radio]:checked~.slider-button {
+.slider .slides .slide input[type=radio]:checked~.slider-arrow {
     display: flex;
 }
 
-.slider .slides .slide .slider-button.previous {
+.slider .slides .slide .slider-arrow.previous {
     transform: rotate(180deg);
     left: 4px;
 }
 
-.slider .slides .slide .slider-button.next {
+.slider .slides .slide .slider-arrow.next {
     right: 4px;
 }
 
-.slider .slides .slide .slider-button img {
+.slider .slides .slide .slider-arrow img {
     width: 20px;
     height: 20px;
     opacity: 0.2;
 }
 
-.slider .slides .slide .slider-button img:hover {
+.slider .slides .slide .slider-arrow img:hover {
     cursor: pointer;
     opacity: 0.4;
 }

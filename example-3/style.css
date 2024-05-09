@@ -42,13 +42,13 @@
     gap: 15px;
 }
 
-.slider .slider-nav .slider-button {
+.slider .slider-nav .slider-arrow {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.slider .slider-nav .slider-button img {
+.slider .slider-nav .slider-arrow img {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -58,11 +58,11 @@
     opacity: 0.2;
 }
 
-.slider .slider-nav .slider-button.previous img {
+.slider .slider-nav .slider-arrow.previous img {
     transform: rotate(180deg);
 }
 
-.slider .slider-nav .slider-button img:hover {
+.slider .slider-nav .slider-arrow img:hover {
     cursor: pointer;
     color: black;
     opacity: 0.4;

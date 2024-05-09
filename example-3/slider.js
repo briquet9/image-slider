@@ -49,11 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 slider.getElementsByClassName('next')[0].style.visibility = "hidden";
             }
 
-            slider.querySelectorAll('.slider-button.previous img')[0].addEventListener(
+            slider.querySelectorAll('.slider-arrow.previous img')[0].addEventListener(
                 'click', event => arrowClicked(event, -1)
             );
 
-            slider.querySelectorAll('.slider-button.next img')[0].addEventListener(
+            slider.querySelectorAll('.slider-arrow.next img')[0].addEventListener(
                 'click', event => arrowClicked(event, 1)
             );
 
