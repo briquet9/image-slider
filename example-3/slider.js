@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slides.scrollLeft += direction * slides.scrollWidth / slides.childElementCount;
     }
 
-    function radioChanged(event, n) {
+    function radioChanged(event) {
         var radio = document.getElementById(event.target.id);
         var radioIndex = [...radio.parentElement.children].indexOf(radio);
         var slides = radio.parentElement.parentElement.parentElement.getElementsByClassName('slides')[0];
