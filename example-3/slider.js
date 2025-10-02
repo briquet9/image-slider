@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+    var currentIndex = 1;
 
     function arrowClicked(event, direction) {
         var slides = event.target.parentElement.parentElement.parentElement.getElementsByClassName('slides')[0];
         slides.scrollLeft += direction * slides.scrollWidth / slides.childElementCount;
+        currentIndex += direction;
     }
 
     function radioChanged(event) {
@@ -10,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var radioIndex = [...radio.parentElement.children].indexOf(radio);
         var slides = radio.parentElement.parentElement.parentElement.getElementsByClassName('slides')[0];
         slides.scrollLeft = radioIndex / slides.childElementCount * slides.scrollWidth;
+        currentIndex = radioIndex + 1;
     }
 
     function scrolled(event) {
@@ -19,25 +22,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var radioId = 'radio_' + id + '_slide';
         var size = slides.childElementCount;
+        var position = 1 + Math.round(scrollRatio * size);
 
-        for (let i = 1; i <= size; i++) {
-            if (scrollRatio + 0.5 / size < i / size) {
-                document.getElementById(radioId + i).checked = true;
+        if(position == currentIndex) {
+            return;
+        }
+        currentIndex = position;
 
-                if (i == 1) {
-                    document.getElementById(id).getElementsByClassName('previous')[0].style.visibility = "hidden";
-                } else {
-                    document.getElementById(id).getElementsByClassName('previous')[0].style.visibility = "visible";
-                }
+        document.getElementById(radioId + position).checked = true;
 
-                if (i == size) {
-                    document.getElementById(id).getElementsByClassName('next')[0].style.visibility = "hidden";
-                } else {
-                    document.getElementById(id).getElementsByClassName('next')[0].style.visibility = "visible";
-                }
+        if (position == 1) {
+            document.getElementById(id).getElementsByClassName('previous')[0].style.visibility = "hidden";
+        } else {
+            document.getElementById(id).getElementsByClassName('previous')[0].style.visibility = "visible";
+        }
 
-                break;
-            }
+        if (position == size) {
+            document.getElementById(id).getElementsByClassName('next')[0].style.visibility = "hidden";
+        } else {
+            document.getElementById(id).getElementsByClassName('next')[0].style.visibility = "visible";
         }
     }
 
