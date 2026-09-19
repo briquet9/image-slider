@@ -15,30 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
     function scrolled(event) {
         var slides = event.target;
         var slider = slides.closest('.slider');
-        var scrollRatio = slides.scrollLeft / slides.scrollWidth;
-
-        var radioId = 'radio_' + slider.id + '_slide';
         var size = slides.childElementCount;
 
-        for (let i = 1; i <= size; i++) {
-            if (scrollRatio + 0.5 / size < i / size) {
-                document.getElementById(radioId + i).checked = true;
+        // Compute the new slide index
+        var scrollRatio = slides.scrollLeft / slides.scrollWidth;
+        var slideIndex = Math.round(scrollRatio * size) + 1;
 
-                if (i == 1) {
-                    slider.querySelector('.previous').style.visibility = "hidden";
-                } else {
-                    slider.querySelector('.previous').style.visibility = "visible";
-                }
+        // Get the corresponding radio for the slide index
+        var targetRadio = document.getElementById(`radio_${slider.id}_slide${slideIndex}`);
 
-                if (i == size) {
-                    slider.querySelector('.next').style.visibility = "hidden";
-                } else {
-                    slider.querySelector('.next').style.visibility = "visible";
-                }
-
-                break;
-            }
+        // If already active, skip the update
+        if (targetRadio.checked) {
+            return;
         }
+
+        // Update radio state and toggle arrow visibility
+        targetRadio.checked = true;
+        slider.querySelector('.previous').style.visibility = (slideIndex === 1) ? "hidden" : "visible";
+        slider.querySelector('.next').style.visibility = (slideIndex === size) ? "hidden" : "visible";
     }
 
     document.querySelectorAll('.slider').forEach(
