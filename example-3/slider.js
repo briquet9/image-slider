@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     function arrowClicked(event, direction) {
-        var slides = event.target.parentElement.parentElement.parentElement.getElementsByClassName('slides')[0];
+        var slides = event.target.closest('.slider').querySelector('.slides');
         slides.scrollLeft += direction * slides.scrollWidth / slides.childElementCount;
     }
 
     function radioChanged(event) {
-        var radio = document.getElementById(event.target.id);
+        var radio = event.target;
         var radioIndex = [...radio.parentElement.children].indexOf(radio);
-        var slides = radio.parentElement.parentElement.parentElement.getElementsByClassName('slides')[0];
+        var slides = radio.closest('.slider').querySelector('.slides');
         slides.scrollLeft = radioIndex / slides.childElementCount * slides.scrollWidth;
     }
 
     function scrolled(event) {
-        var id = event.target.parentElement.id;
-        var slides = document.getElementById(id).getElementsByClassName('slides')[0];
+        var slides = event.target;
+        var slider = slides.closest('.slider');
         var scrollRatio = slides.scrollLeft / slides.scrollWidth;
 
-        var radioId = 'radio_' + id + '_slide';
+        var radioId = 'radio_' + slider.id + '_slide';
         var size = slides.childElementCount;
 
         for (let i = 1; i <= size; i++) {
@@ -25,15 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById(radioId + i).checked = true;
 
                 if (i == 1) {
-                    document.getElementById(id).getElementsByClassName('previous')[0].style.visibility = "hidden";
+                    slider.querySelector('.previous').style.visibility = "hidden";
                 } else {
-                    document.getElementById(id).getElementsByClassName('previous')[0].style.visibility = "visible";
+                    slider.querySelector('.previous').style.visibility = "visible";
                 }
 
                 if (i == size) {
-                    document.getElementById(id).getElementsByClassName('next')[0].style.visibility = "hidden";
+                    slider.querySelector('.next').style.visibility = "hidden";
                 } else {
-                    document.getElementById(id).getElementsByClassName('next')[0].style.visibility = "visible";
+                    slider.querySelector('.next').style.visibility = "visible";
                 }
 
                 break;
@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.slider').forEach(
         slider => {
-            slider.getElementsByClassName('previous')[0].style.visibility = "hidden";
+            slider.querySelector('.previous').style.visibility = "hidden";
 
             if (slider.childElementCount < 1) {
-                slider.getElementsByClassName('next')[0].style.visibility = "hidden";
+                slider.querySelector('.next').style.visibility = "hidden";
             }
 
             slider.querySelectorAll('.slider-arrow.previous img')[0].addEventListener(
@@ -58,10 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
             slider.addEventListener(
-                'change', event => { radioChanged(event); }
+                'change', event => {
+                    radioChanged(event);
+                }
             );
 
-            slider.getElementsByClassName('slides')[0].addEventListener(
+            slider.querySelector('.slides').addEventListener(
                 'scroll', event => scrolled(event)
             );
         }
